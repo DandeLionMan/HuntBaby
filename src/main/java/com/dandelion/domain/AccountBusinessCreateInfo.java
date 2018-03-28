@@ -28,7 +28,7 @@ public class AccountBusinessCreateInfo {
 	@ManyToOne
 	@JoinColumn(name="userid", nullable=false)
 	public User user;
-	
+
 	@Column(name = "userid", insertable=false,updatable=false)
 	private Long userid;
 	
