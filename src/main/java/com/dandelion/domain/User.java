@@ -1,13 +1,7 @@
 package com.dandelion.domain;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 
 /**
  * 用户User POJO定义
@@ -16,13 +10,12 @@ import javax.persistence.UniqueConstraint;
  *
  */
 @Entity
-@Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "username" }) })
+@Table(name = "users")
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public Long id;
 
 	private String username;
 	private String password;

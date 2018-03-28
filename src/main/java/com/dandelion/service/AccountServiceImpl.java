@@ -72,7 +72,7 @@ public class AccountServiceImpl implements AccountService {
 			if (user != null) {
 				AccountBusinessCreateInfo accountBusinessCreateInfo = new AccountBusinessCreateInfo();
 				accountBusinessCreateInfo.setUser(user);
-				accountBusinessCreateInfo.setUserid(user.getId());
+				//accountBusinessCreateInfo.setUserid(user.getId());
 				accountBusinessCreateInfo.setPlatform(1);
 				accountBusinessCreateInfo.setWechat(user.getWeixin());
 				accountBusinessCreateInfo.setNickname(accountCreateForm.optString("nickname"));
