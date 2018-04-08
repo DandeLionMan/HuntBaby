@@ -1,6 +1,7 @@
 package com.dandelion.domain;
 
 import lombok.Data;
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -32,7 +33,9 @@ public class AccountBusinessCreateInfo {
         return user;
     }
 
-    private int platform; // 平台
+
+    @JsonProperty("platform")
+    public int platform; // 平台
     private String wechat;
     private String buywechat; // 买家微信
     private String nickname;

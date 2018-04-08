@@ -69,7 +69,7 @@ public class User {
 	public int getEnabled() {
 		return enabled;
 	}
-	
+
 	public String getWeixin() {
 		return weixin;
 	}
@@ -89,7 +89,7 @@ public class User {
 	public int getSubmitcountmoney() {
 		return submitcountmoney;
 	}
-	
+
 	public int getSuccessbusin() {
 		return successbusin;
 	}
@@ -129,7 +129,7 @@ public class User {
 	public void setSubmitcountcheat(int submitcountcheat) {
 		this.submitcountcheat = submitcountcheat;
 	}
-	
+
 	public int getClient() {
 		return client;
 	}
@@ -141,7 +141,7 @@ public class User {
 	public void setEnabled(int enabled) {
 		this.enabled = enabled;
 	}
-	
+
 	public String getRole() {
 		return role;
 	}
