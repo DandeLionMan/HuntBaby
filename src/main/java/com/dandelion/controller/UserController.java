@@ -92,7 +92,6 @@ public class UserController {
 
 	/**
 	 * 创建用户验证表单
-	 * 
 	 * @param binder
 	 */
 	@InitBinder("userCreateForm")
@@ -122,7 +121,6 @@ public class UserController {
 
 	/**
 	 * 创建用户接口
-	 * 
 	 * @param form
 	 * @param bindingResult
 	 * @return
@@ -156,7 +154,6 @@ public class UserController {
 						return new ResponseEntity<Message>(message, HttpStatus.OK);
 					}
 					// 编码
-					//User current = userService.getCurrentUser();
 					User current = userService.getUserByUsername(jsStr.optString("username"));
 					if (current != null) {
 						LOGGER.warn("currentUSer：" + current);

@@ -79,6 +79,12 @@
     		<version>3.3.3</version>
 		</dependency>
 
+		<!-- 热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 
 		<dependency>
 			<groupId>commons-httpclient</groupId>
@@ -144,7 +150,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-                <mainClass>.YidongyiApplication</mainClass>
+                	<mainClass>com.dandelion.YidongyiApplication</mainClass>
+					<!-- 热部署 没有该配置，devtools 不生效 -->
+					<fork>true</fork>
             	</configuration>
 			</plugin>
 			
@@ -157,8 +165,7 @@
 			            <manifest>  
 			                <addClasspath>true</addClasspath>  
 			                <classpathPrefix>lib/</classpathPrefix>  
-			                <mainClass>.YidongyiApplication</mainClass>
-			            </manifest>  
+			            </manifest>
 			        </archive>  
 			    </configuration>  
 			</plugin> 

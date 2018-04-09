@@ -1,10 +1,8 @@
 package com.dandelion.domain;
 
-import lombok.Data;
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+
 
 /**
  * 创建账号信息
@@ -13,28 +11,25 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "account")
-@DynamicUpdate // 更新时间
-@Data
+//@DynamicUpdate // 更新时间
+//@Data
 public class AccountBusinessCreateInfo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO )
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
 
-//    @OneToOne(targetEntity = User.class, optional = false, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "userid", referencedColumnName = "id", insertable = false, updatable = false)
-//    public Long userid;
-
-
+    @ManyToOne
+    @JoinColumn(name="userid", nullable=false)
     public User user;
 
+    @Column(name = "userid", insertable=false,updatable=false)
+    private Long userid;
 
     public User getUser() {
         return user;
     }
 
-
-    @JsonProperty("platform")
     public int platform; // 平台
     private String wechat;
     private String buywechat; // 买家微信
@@ -124,13 +119,13 @@ public class AccountBusinessCreateInfo {
         this.user = user;
     }
 
-//    public Long getUserid() {
-//        return userid;
-//    }
+    public Long getUserid() {
+        return userid;
+    }
 
-//    public void setUserid(Long userid) {
-//        this.userid = userid;
-//    }
+    public void setUserid(Long userid) {
+        this.userid = userid;
+    }
 
     public int getMacordnance() {
         return macordnance;

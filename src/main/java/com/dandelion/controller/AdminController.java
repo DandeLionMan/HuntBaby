@@ -150,7 +150,6 @@ public class AdminController {
 
 	/**
 	 * 用户管理
-	 * 
 	 * @param model
 	 * @return
 	 */
@@ -162,7 +161,6 @@ public class AdminController {
 
 	/**
 	 * 账号管理
-	 * 
 	 * @param model
 	 * @return
 	 */
